@@ -3,6 +3,9 @@
     padding: 0pt;
     font-family: ModernSans;
 }
+textarea {
+    resize: none;
+}
 @font-face {
     font-family: Poison;
     src:url(./fonts/Poison-Regular.ttf)
@@ -39,8 +42,40 @@
         transform: rotateY(0deg);
     }
 }
-
-
+@keyframes unveilFromRight {
+    from {
+        position: relative;
+        opacity: 0;
+        left: 25%;
+    }
+    to {
+        position: relative;
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes unveilFromLeft {
+    from {
+        position: relative;
+        opacity: 0;
+        left: -25%;
+    }
+    to {
+        position: relative;
+        opacity: 1;
+        left: 0;
+    }
+}
+@keyframes bounceInCenter {
+    from {
+        opacity: 0;
+        transform: scale(.25)
+    }
+    to {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
 
 
 
@@ -55,14 +90,11 @@
 
 
 .header {
-    /* height: 550pt; */
-    /* box-shadow: inset -17px -15px 15px -10px black; */
     box-shadow: inset 0px -15px 15px -10px black;
 
     padding-top: 50pt;
     padding-bottom: 25pt;
 
-    /* background-color: black; */
     background-image: url(./images/unnamed.png);
     background-size: 420pt;
     background-repeat: no-repeat;
@@ -89,10 +121,7 @@
     transform: rotate(-45deg);
 }
 .header > main {
-    /* color: white; */
-
     padding: 25pt;
-
 
     position: relative;
     animation-name: fadeInFromUnder;
@@ -128,8 +157,6 @@
     font-size: 15pt;
     font-weight: 300;
     letter-spacing: .5pt;
-
-
 
     display: flex;
     align-items: center;
@@ -197,11 +224,12 @@
     color: white;
     font-size: 17pt;
     letter-spacing: .75pt;
-    /* font-weight: 100; */
 }
 .dropDown > p:hover {
     color: rgb(218, 40, 40);
 }
+
+
 
 
 
@@ -215,16 +243,50 @@
 
 .sectionHeaders {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    margin-bottom: 5pt;
 }
 .sectionHeaders > h1 {
-    font-size: 29pt;
+    font-size: 30pt;
     letter-spacing: .75pt;
 
     padding-top: 15pt;
     padding-bottom: 2pt;
+}
+.sectionHeaders > h2 {
+    width: 75pt;
     border-bottom: 2pt solid black;
 }
+
+
+
+
+.headerAnimationFromRight {
+    animation-name: unveilFromRight;
+    animation-duration: 1s;
+}
+.headerAnimationFromLeft {
+    animation-name: unveilFromLeft;
+    animation-duration: 1s;
+}
+
+.underScoreAnimationFromRight {
+    animation-name: unveilFromRight;
+    animation-delay: .30s;
+    animation-duration: 1s;
+
+    transition-delay: .30s;
+}
+.underScoreAnimationFromLeft {
+    animation-name: unveilFromLeft;
+    animation-delay: .30s;
+    animation-duration: 1s;
+
+    transition-delay: .30s;
+}
+
 
 
 
@@ -242,7 +304,18 @@
 
 .about {
     background-color: rgb(255, 244, 226);
+
+    padding-top: 35pt;
+    padding-bottom: 35pt;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -284,10 +357,16 @@
 /*  */
 /*  */
 
+
 .devProjects {
-    border: 1pt solid black;
-    height: 1000pt;
+    height: 500pt;
+
+    padding-top: 35pt;
+    padding-bottom: 35pt;
 }
+
+
+
 
 
 
@@ -300,10 +379,69 @@
 /*  */
 /*  */
 
-.contact {
-    border: 1pt solid black;
-    height: 1000pt;
+.contactBorder {
+    border-bottom: 0pt;
+    border-top: 95pt solid white;
 }
+
+.contact {
+    background-color: rgb(16, 101, 124);
+    color: white;
+
+    /* height: 500pt; */
+
+    padding-top: 35pt;
+    padding-bottom: 35pt;
+}
+.contact > main > h2 {
+    border-bottom: 2pt solid white;
+}
+
+
+
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 35pt;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+.formAppear {
+    animation-name: bounceInCenter;
+    animation-duration: 1.25s;
+    animation-timing-function: cubic-bezier(.35,1.5,.56,1);
+}
+.contactForm > * {
+    background-color: rgb(10, 65, 78);
+    border: 0pt;
+    margin-bottom: 1.5pt;
+    padding: 9pt;
+
+    font-family: sans-serif;
+    font-size: 13pt;
+    font-weight: 100;
+    letter-spacing: 1pt;
+
+    color: white;
+}
+.contactForm > textarea {
+    min-height: 110pt;
+}
+.contactForm > button {
+    font-family: ModernSans;
+    font-size: 16pt;
+
+    padding-left: 17pt;
+    padding-right: 17pt;
+
+    background-color: transparent;
+    margin-top: 5pt;
+    margin-left: auto;
+    border: 1.25pt solid white;
+}
+
 
 @media (min-width: 319pt){
     .header {
@@ -334,6 +472,15 @@
     }
     .tech > div > img {
         height: 50pt;
+    }
+
+
+
+
+
+    .contactForm {
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 @media (min-width: 576pt){
@@ -390,6 +537,17 @@
         height: 60pt;
         padding: 19pt;
     }
+
+
+
+
+    .contactForm {
+        width: 350pt;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }
 @media (min-width: 768pt){
     .header {

@@ -15,44 +15,37 @@ const App = () => {
     const [whereAreWe, setWhereAreWe] = useState([{ i: 0 }])
     const [animationActivate, setAnimationActivate] = useState({})
 
+    const elementDetails = id => document.getElementById(id).getBoundingClientRect();
+
     const screenIsOver = (details) => {
         const { top, height } = details
-        const navHeight = document.getElementById("nav").getBoundingClientRect().height
+        const navHeight = elementDetails("nav").height
         return window.innerHeight - top - height > 0 && top - navHeight > 0
     }
 
     const backgroundScroll = () => {
-        const homeTop = document.getElementById("home").getBoundingClientRect().top
-        const aboutTop = document.getElementById("about").getBoundingClientRect().top
-        const devProjectsTop = document.getElementById("devProjects").getBoundingClientRect().top
-        const contactTop = document.getElementById("contact").getBoundingClientRect().top
-        setWhereAreWe([ 
-            { i: 0, position: homeTop },
-            { i: 1, position: aboutTop },
-            { i: 2, position: devProjectsTop },
-            { i: 3, position: contactTop }
-        ])
-        setAnimationActivate(prev => ({
-            devTools1: prev.devTools1 ? true : screenIsOver(document.getElementById("devTools1").getBoundingClientRect()),
-            devTools2: prev.devTools2 ? true : screenIsOver(document.getElementById("devTools2").getBoundingClientRect()),
-            devTools3: prev.devTools3 ? true : screenIsOver(document.getElementById("devTools3").getBoundingClientRect()),
-            devTools4: prev.devTools4 ? true : screenIsOver(document.getElementById("devTools4").getBoundingClientRect()),
-            devTools5: prev.devTools5 ? true : screenIsOver(document.getElementById("devTools5").getBoundingClientRect()),
-            devTools6: prev.devTools6 ? true : screenIsOver(document.getElementById("devTools6").getBoundingClientRect()),
-            devTools7: prev.devTools7 ? true : screenIsOver(document.getElementById("devTools7").getBoundingClientRect()),
-            devTools8: prev.devTools8 ? true : screenIsOver(document.getElementById("devTools8").getBoundingClientRect()),
-            devTools9: prev.devTools9 ? true : screenIsOver(document.getElementById("devTools9").getBoundingClientRect()),
-            devTools10: prev.devTools10 ? true : screenIsOver(document.getElementById("devTools10").getBoundingClientRect()),
-            devTools11: prev.devTools11 ? true : screenIsOver(document.getElementById("devTools11").getBoundingClientRect())
-        }))
-
-
+        const sectionArr = ["home", "about", "devProjects", "contact"]
+        const mappedSectionArr = sectionArr.map((id, i) => ({ i, position: elementDetails(id).top }))
+        setWhereAreWe(mappedSectionArr)
+        const  animationArr = []
+        for (let i = 1; i < 12; i++){
+            animationArr.push(`devTools${i}`)
+            if (i < 4) animationArr.push(`header${i}`);
+            if (i < 2) animationArr.push("contactForm")
+        }
+        let animationObj = {}
+        animationArr.forEach((id) => animationObj = {...animationObj, [id]: screenIsOver(elementDetails(id))})
+        setAnimationActivate(prev => {
+            const prevArr = Object.entries(prev)
+            prevArr.forEach((arr) => { if (arr[1]) animationObj = {...animationObj, [arr[0]]: arr[1]}; })
+            return animationObj
+        })
         setOffset([window.scrollX, window.scrollY])
     };
 
     const scrollToSection = section => {
-        const { top } = document.getElementById(section).getBoundingClientRect()
-        const { height } = document.getElementById("nav").getBoundingClientRect()
+        const { top } = elementDetails(section)
+        const { height } = elementDetails("nav")
         window.scrollTo({
             top: top + offset[1] - (section === "home" ? 0 : height),
             behavior: 'smooth'
@@ -68,14 +61,19 @@ const App = () => {
         return () => window.removeEventListener('scroll', backgroundScroll);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-    
     return(
         <div onClick={closeNav}>
             <Header offset={offset} scrollToSection={scrollToSection}/>
             <Nav where={whereAreWe} offset={offset} scrollToSection={scrollToSection}/>
             <About animations={animationActivate} />
-            <DevProjects />
-            <Contact />
+            <DevProjects animations={animationActivate}/>
+            <div className="contactBorder" style={
+                { 
+                    borderLeft: `${window.innerWidth / 2 * .75}pt solid rgb(16, 101, 124)`, 
+                    borderRight: `${window.innerWidth / 2 * .75}pt solid rgb(16, 101, 124)`
+                }
+            }></div>
+            <Contact animations={animationActivate}/>
         </div>
     )
 }

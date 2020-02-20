@@ -1,12 +1,19 @@
 import React from 'react'
 
-const DevProjects = () => {
+import SectionHeaders from './SectionHeaders';
 
+const DevProjects = ({ animations }) => {
+    const { header2 } = animations
     return(
         <section id="devProjects" className="devProjects">
-            <main className="sectionHeaders">
-                <h1>Portfolio</h1>
-            </main>
+            <SectionHeaders 
+                title={"Portfolio"} 
+                id={"header2"} 
+                isOn={header2} 
+                headerClassName={"headerAnimationFromLeft"} 
+                underScoreClassName={"underScoreAnimationFromLeft"}
+            />
+            
         </section>
     )
 }
