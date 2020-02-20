@@ -2,15 +2,11 @@ import React, { useState } from "react"
 
 import Image from "../images/IMG_5636.jpg"
 
-const Header = () => {
+const Header = ({ offset, scrollToSection }) => {
     const [arrow, setArrow] = useState(false)
-    
-    const scrollToDetails = () => {
-        console.log("scroll to details")
-    }
 
     return(
-        <header className="header">
+        <header id="home" className="header" style={{ backgroundPositionY: `${(offset[1] / 4) - 25}%`}}>
             <div>
                 <div>
                     <img src={Image} alt=""/>
@@ -23,12 +19,8 @@ const Header = () => {
                     className={`viewDetails ${arrow ? "viewDown" : ""}`}
                     onMouseEnter={() => setArrow(true)}
                     onMouseLeave={() => setArrow(false)}
-                    onClick={scrollToDetails}
+                    onClick={() => scrollToSection("about")}
                 >View my details <span className={`arrow ${arrow ? "arrowDown" : "arrowUp"}`}>e</span></button>
-                
-                
-                
-
             </main>
         </header>
     )
