@@ -4,12 +4,11 @@ import SectionHeaders from './SectionHeaders';
 import ContactForm from "./ContactForm.js"
 
 const Contact = ({ animations }) => {
-    const { header3, contactForm } = animations
+    const { header3, contactForm, contactSubheader } = animations
 
     const handleSubmit = message => {
         console.log(message)
     }
-
     return(
         <section id="contact" className="contact">
             <SectionHeaders 
@@ -19,10 +18,11 @@ const Contact = ({ animations }) => {
                 headerClassName={"headerAnimationFromRight"} 
                 underScoreClassName={"underScoreAnimationFromLeft"}
             />
-            {/* message here, call to action */}
-
-
-
+            <h3 
+                id="contactSubheader" 
+                className={contactSubheader ? "underScoreAnimationFromRight" : ""} 
+                style={{ opacity: contactSubheader ? "1" : "0"}}
+            >Have any questions? - Want to know more?</h3>
             <ContactForm 
                 className="contactForm"
                 questions={[

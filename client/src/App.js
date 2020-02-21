@@ -7,6 +7,7 @@ import Nav from "./components/Nav.js"
 import About from './components/About.js'
 import DevProjects from './components/DevProjects.js'
 import Contact from './components/Contact.js'
+import Footer from './components/Footer.js'
 
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
         for (let i = 1; i < 12; i++){
             animationArr.push(`devTools${i}`)
             if (i < 4) animationArr.push(`header${i}`);
-            if (i < 2) animationArr.push("contactForm")
+            if (i < 2) animationArr.push("contactForm", "contactSubheader")
         }
         let animationObj = {}
         animationArr.forEach((id) => animationObj = {...animationObj, [id]: screenIsOver(elementDetails(id))})
@@ -55,7 +56,7 @@ const App = () => {
     const closeNav = () => {
         if (navOpen) setNavOpen(false);
     }
-
+   
     useEffect(() => {
         window.addEventListener('scroll', backgroundScroll)
         return () => window.removeEventListener('scroll', backgroundScroll);
@@ -74,6 +75,7 @@ const App = () => {
                 }
             }></div>
             <Contact animations={animationActivate}/>
+            <Footer scrollToSection={scrollToSection}/>
         </div>
     )
 }

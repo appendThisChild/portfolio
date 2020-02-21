@@ -6,6 +6,9 @@
 textarea {
     resize: none;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 @font-face {
     font-family: Poison;
     src:url(./fonts/Poison-Regular.ttf)
@@ -17,6 +20,10 @@ textarea {
 @font-face {
     font-family: Arrows;
     src:url(./fonts/Arrows_tfb.ttf)
+}
+@font-face {
+    font-family: Social;
+    src:url(./fonts//social_font.ttf)
 }
 
 
@@ -76,7 +83,14 @@ textarea {
         transform: scale(1)
     }
 }
-
+@keyframes dropIn {
+    from {
+        transform: translateY(-39pt);
+    }
+    to {
+        transform: translateY(none);
+    }
+}
 
 
 
@@ -146,6 +160,7 @@ textarea {
     letter-spacing: 1pt;
 }
 .viewDetails {
+    cursor: pointer;
     position: relative;
     transition: all .3s linear 0s;
 
@@ -164,8 +179,8 @@ textarea {
     margin-right: auto;
 }
 .viewDown {
-    border: 1pt solid #85ff85;
-    background-color: #85ff85;
+    border: 1pt solid#73ff16;
+    background-color: #73ff16;
 }
 .arrow {
     display: inline-block;
@@ -220,13 +235,15 @@ textarea {
     transition: all .3s linear 0s;
 }
 .dropDown > p {
+    cursor: pointer;
+
     padding: 8pt;
     color: white;
     font-size: 17pt;
     letter-spacing: .75pt;
 }
 .dropDown > p:hover {
-    color: rgb(218, 40, 40);
+    color: rgb(255, 66, 66);
 }
 
 
@@ -391,12 +408,20 @@ textarea {
     /* height: 500pt; */
 
     padding-top: 35pt;
-    padding-bottom: 35pt;
+    padding-bottom: 85pt;
 }
 .contact > main > h2 {
     border-bottom: 2pt solid white;
 }
+.contact > h3 {
+    opacity: 0;
+    padding-top: 20pt;
 
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 13pt;
+    text-align: center;
+}
 
 
 
@@ -430,6 +455,7 @@ textarea {
     min-height: 110pt;
 }
 .contactForm > button {
+    cursor: pointer;
     font-family: ModernSans;
     font-size: 16pt;
 
@@ -441,6 +467,106 @@ textarea {
     margin-left: auto;
     border: 1.25pt solid white;
 }
+
+
+
+
+
+
+
+/*  */
+/*  */
+/* Footer */
+/*  */
+/*  */
+
+
+.footer {
+    padding-top: 7pt;
+    padding-bottom: 50pt;
+    background-color: rgb(10, 65, 78);
+}
+.footer > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backToTop {
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    height: 43pt;
+    width: 35pt;
+
+    position: relative;
+    top: -29pt;
+
+    background-color: rgb(255, 66, 66);
+    font-size: 18pt;
+    transition: all .2s linear 0s;
+}
+.backToTop:hover {
+    background-color: rgb(255, 96, 96);
+}
+.footer > div > h1 {
+    padding-top: 25pt;
+
+    color: gray;
+    font-family: sans-serif;
+    font-size: 10pt;
+    font-weight: 100;
+    letter-spacing: 1pt;
+}
+.footer > div > h1 > span {
+    color: rgb(255, 66, 66);
+    font-size: 11pt;
+}
+.footer > div > h1 > span > span {
+    font-size: 12pt;
+}
+.socialContainer {
+    cursor: pointer;
+    overflow: hidden;
+
+    background-color: rgb(16, 101, 124);
+    width: 39pt;
+    height: 39pt;
+
+    margin-left: 8pt;
+    margin-right: 8pt;
+
+    transition: all .2s linear 0s;
+}
+.overSocialContainer {
+    background-color: #73ff16;
+    width: 37pt;
+    height: 36pt;
+
+    margin-left: 9pt;
+    margin-right: 9pt;
+}
+.socialIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    font-family: Social;
+    font-size: 22pt;
+
+    height: 100%;
+    width: 100%;
+}
+
+.overSocialIcon {
+    animation-name: dropIn;
+    animation-duration: .3s;
+}
+
+
+
+
+
 
 
 @media (min-width: 319pt){

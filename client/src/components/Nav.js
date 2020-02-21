@@ -26,10 +26,10 @@ const Nav = ({ where, scrollToSection }) => {
                    <span onClick={toggleNav}>&#x2630;</span> 
                 </main>
                 <div className={`dropDown`} style={{ height: navOpen ? `${calculateHeight()}pt` : ""}}>
-                    <p id="link" onClick={() => scrollToSection("home")} style={{ color: smallestNum[0].i === 0 ? "rgb(218, 40, 40)" : ""}}>Home</p>
-                    <p onClick={() => scrollToSection("about")} style={{ color: smallestNum[0].i === 1 ? "rgb(218, 40, 40)" : ""}}>About</p>
-                    <p onClick={() => scrollToSection("devProjects")} style={{ color: smallestNum[0].i === 2 ? "rgb(218, 40, 40)" : ""}}>Portfolio</p>
-                    <p onClick={() => scrollToSection("contact")} style={{ color: smallestNum[0].i === 3 ? "rgb(218, 40, 40)" : ""}}>Contact</p>
+                    <p id="link" onClick={() => scrollToSection("home")} style={{ color: smallestNum[0].i === 0 ? "rgb(255, 66, 66)" : ""}}>Home</p>
+                    <p onClick={() => scrollToSection("about")} style={{ color: smallestNum[0].i === 1 ? "rgb(255, 66, 66)" : ""}}>About</p>
+                    <p onClick={() => scrollToSection("devProjects")} style={{ color: smallestNum[0].i === 2 ? "rgb(255, 66, 66)" : ""}}>Portfolio</p>
+                    <p onClick={() => scrollToSection("contact")} style={{ color: smallestNum[0].i === 3 ? "rgb(255, 66, 66)" : ""}}>Contact</p>
                 </div>
             </nav>
             

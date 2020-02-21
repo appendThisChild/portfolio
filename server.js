@@ -22,6 +22,7 @@ conn.then(() => console.log('[o] Connected to the DB'), (err) => console.log(err
 // routes
 
 
+
 app.use((err, req, res, next) => {
     console.log('Caught Error')
     console.log(err)
