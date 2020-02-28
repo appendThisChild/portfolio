@@ -15,6 +15,7 @@ const App = () => {
     const { navOpen, setNavOpen } = useNavToggle()
     const [whereAreWe, setWhereAreWe] = useState([{ i: 0 }])
     const [animationActivate, setAnimationActivate] = useState({})
+    const halfWidth = window.innerWidth / 2 * .75
 
     const elementDetails = id => document.getElementById(id).getBoundingClientRect();
 
@@ -70,8 +71,8 @@ const App = () => {
             <DevProjects animations={animationActivate}/>
             <div className="contactBorder" style={
                 { 
-                    borderLeft: `${window.innerWidth / 2 * .75}pt solid rgb(16, 101, 124)`, 
-                    borderRight: `${window.innerWidth / 2 * .75}pt solid rgb(16, 101, 124)`
+                    borderLeft: `${halfWidth}pt solid rgb(16, 101, 124)`, 
+                    borderRight: `${halfWidth}pt solid rgb(16, 101, 124)`
                 }
             }></div>
             <Contact animations={animationActivate}/>
