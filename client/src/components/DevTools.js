@@ -21,6 +21,11 @@ const DevTools = ({ animations }) => {
             <div>
                 <h1>Technologies</h1>
             </div>
+            {/* 
+                make this header like the section headers
+                ...
+                
+            */}
             <div>{mappedLogos}</div>
         </div>
     )

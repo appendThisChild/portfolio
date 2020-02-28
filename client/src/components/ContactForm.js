@@ -1,7 +1,9 @@
 import React, { useState } from "react"
 
-const ContactForm = ({ questions, state, handleSubmit, className, isOn }) => {
+const ContactForm = ({ questions, state, handleSubmit, className, isOn, phoneSized }) => {
     const [info, setInfo] = useState(state)
+    const styleTransition = isOn || phoneSized
+    
     const handleChange = e => {
         setInfo({
             ...info,
@@ -28,7 +30,11 @@ const ContactForm = ({ questions, state, handleSubmit, className, isOn }) => {
         }
     })
     return(
-        <form id="contactForm" className={`${className} ${isOn ? "formAppear" : ""}`} style={{ opacity: isOn ? "1" : "0"}} onSubmit={preSubmit}>
+        <form 
+            id="contactForm" 
+            className={`${className} ${isOn ? "formAppear" : ""}`} 
+            style={{ opacity: styleTransition ? "1" : "0"}} 
+            onSubmit={preSubmit}>
             {questionsMapped}
             <button>Submit</button>
         </form>

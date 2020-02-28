@@ -19,11 +19,12 @@ import marioMain from "../images/mario.png"
 import Project from "./Project.js"
 import SectionHeaders from './SectionHeaders';
 
-const DevProjects = ({ animations }) => {
+const DevProjects = ({ animations, phoneSized }) => {
     const projectsArr = [
         {
             image: [blissed, blissedMain],
             title: "Blissed Out Body Work",
+            // technol: "React.js",
             description: "'Blissed Out Body Work', a massage therapy company located in the Greater Salt Lake City Area. The website was design to streamline the process of setting appointments for customers and creating a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details for owners. Booking an appointment is made simple by going through the selection process and paying at the end with Stripe's gateway. It send receipt via Stripe and calendar invites via Google.",
             link: "https://www.blissedoutbodywork.com" 
         },
@@ -64,11 +65,8 @@ const DevProjects = ({ animations }) => {
             link: "http://nottherealmariopestcontrol.surge.sh" 
         },
     ]
-    const { header2 } = animations
-
-    const mappedProjects = projectsArr.map((projectObj, i) => {
-        return <Project key={i} {...projectObj} />
-    })
+    const { header2, projectSubheader } = animations
+    const mappedProjects = projectsArr.map((projectObj, i) => <Project key={i} phoneSized={phoneSized} i={i + 1} id={`project${i + 1}`} trigger={animations[`project1`]} {...projectObj} />)
     return(
         <section id="devProjects" className="devProjects">
             <SectionHeaders 
@@ -78,6 +76,11 @@ const DevProjects = ({ animations }) => {
                 headerClassName={"headerAnimationFromLeft"} 
                 underScoreClassName={"underScoreAnimationFromLeft"}
             />
+            <h3 
+                id="projectSubheader" 
+                className={projectSubheader ? "underScoreAnimationFromRight" : ""} 
+                style={{ opacity: projectSubheader ? "1" : "0"}}
+            >Click and Explore my most recent work!</h3>
             <div className="projects">
                 {mappedProjects}
             </div>

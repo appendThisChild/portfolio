@@ -9,14 +9,14 @@ import DevProjects from './components/DevProjects.js'
 import Contact from './components/Contact.js'
 import Footer from './components/Footer.js'
 
+const phoneSized = window.innerWidth < 426
 
 const App = () => {
     const [offset, setOffset] = useState([window.scrollX, window.scrollY]);
     const { navOpen, setNavOpen } = useNavToggle()
     const [whereAreWe, setWhereAreWe] = useState([{ i: 0 }])
     const [animationActivate, setAnimationActivate] = useState({})
-    const halfWidth = window.innerWidth / 2 * .75
-
+    
     const elementDetails = id => document.getElementById(id).getBoundingClientRect();
 
     const screenIsOver = (details) => {
@@ -33,13 +33,14 @@ const App = () => {
         for (let i = 1; i < 12; i++){
             animationArr.push(`devTools${i}`)
             if (i < 4) animationArr.push(`header${i}`);
-            if (i < 2) animationArr.push("contactForm", "contactSubheader")
+            if (i < 2) animationArr.push("contactSubheader", "projectSubheader");
+            if (i < 2 && !phoneSized) animationArr.push(`project1`, "contactForm");
         }
         let animationObj = {}
         animationArr.forEach((id) => animationObj = {...animationObj, [id]: screenIsOver(elementDetails(id))})
         setAnimationActivate(prev => {
             const prevArr = Object.entries(prev)
-            prevArr.forEach((arr) => { if (arr[1]) animationObj = {...animationObj, [arr[0]]: arr[1]}; })
+            prevArr.forEach((arr) => { if (arr[1]) animationObj = {...animationObj, [arr[0]]: true}; })
             return animationObj
         })
         setOffset([window.scrollX, window.scrollY])
@@ -57,7 +58,9 @@ const App = () => {
     const closeNav = () => {
         if (navOpen) setNavOpen(false);
     }
-   
+
+    // console.log(animationActivate)
+    
     useEffect(() => {
         window.addEventListener('scroll', backgroundScroll)
         return () => window.removeEventListener('scroll', backgroundScroll);
@@ -68,14 +71,9 @@ const App = () => {
             <Header offset={offset} scrollToSection={scrollToSection}/>
             <Nav where={whereAreWe} offset={offset} scrollToSection={scrollToSection}/>
             <About animations={animationActivate} />
-            <DevProjects animations={animationActivate}/>
-            <div className="contactBorder" style={
-                { 
-                    borderLeft: `${halfWidth}pt solid rgb(16, 101, 124)`, 
-                    borderRight: `${halfWidth}pt solid rgb(16, 101, 124)`
-                }
-            }></div>
-            <Contact animations={animationActivate}/>
+            <DevProjects phoneSized={phoneSized} animations={animationActivate}/>
+            <div className="contactBorder"></div>
+            <Contact phoneSized={phoneSized} animations={animationActivate}/>
             <Footer scrollToSection={scrollToSection}/>
         </div>
     )

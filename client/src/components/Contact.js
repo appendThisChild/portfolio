@@ -3,7 +3,7 @@ import React from 'react'
 import SectionHeaders from './SectionHeaders';
 import ContactForm from "./ContactForm.js"
 
-const Contact = ({ animations }) => {
+const Contact = ({ animations, phoneSized }) => {
     const { header3, contactForm, contactSubheader } = animations
 
     const handleSubmit = message => {
@@ -50,6 +50,7 @@ const Contact = ({ animations }) => {
                     }
                 }
                 isOn={contactForm}
+                phoneSized={phoneSized}
                 handleSubmit={handleSubmit} 
             /> 
         </section>
