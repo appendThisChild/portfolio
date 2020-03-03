@@ -4,10 +4,13 @@ import App from "./App.js"
 import "./styles.css"
 
 import { NavToggleProvider } from "./context/NavToggleProvider.js"
+import { ProjectProvider } from "./context/ProjectProvider.js"
 
 ReactDOM.render(
     <NavToggleProvider>
-        <App />
+        <ProjectProvider>
+            <App />
+        </ProjectProvider>
     </NavToggleProvider>
 ,
 document.getElementById("root"))

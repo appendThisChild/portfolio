@@ -1,9 +1,11 @@
 import React from "react"
 
 import { useNavToggle } from "../context/NavToggleProvider.js"
+import { useProject } from "../context/ProjectProvider.js"
 
 const Nav = ({ where, scrollToSection }) => {
     const { navOpen, setNavOpen } = useNavToggle()
+    const { viewing } = useProject()
 
     const toggleNav = () => {
         setNavOpen(prev => !prev)
@@ -21,7 +23,7 @@ const Nav = ({ where, scrollToSection }) => {
     })
     return(
         <>
-            <nav id="nav" className="nav">
+            <nav id="nav" className="nav" style={{ position: viewing ? "initial" : ""}}>
                 <main>
                    <span onClick={toggleNav}>&#x2630;</span> 
                 </main>

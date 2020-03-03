@@ -24,44 +24,57 @@ const DevProjects = ({ animations, phoneSized }) => {
         {
             image: [blissed, blissedMain],
             title: "Blissed Out Body Work",
-            // technol: "React.js",
-            description: "'Blissed Out Body Work', a massage therapy company located in the Greater Salt Lake City Area. The website was design to streamline the process of setting appointments for customers and creating a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details for owners. Booking an appointment is made simple by going through the selection process and paying at the end with Stripe's gateway. It send receipt via Stripe and calendar invites via Google.",
+            sub: "React, Node, and JavaScript",
+            oneLine: "APPOINTMENT BOOKING WEBSITE",
+            description: "Streamlines the process of setting appointments for customers and creates a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details. Payment processing via Stripe and calendar invites via GCP.",
             link: "https://www.blissedoutbodywork.com" 
         },
         {
             image: [pettingill, pettingillMain],
             title: "Pettingill Industries",
-            description: "",
+            sub: "React, Node, and JavaScript",
+            oneLine: "ONLINE BUSINESS SOLUTIONS",
+            description: "Responible for displaying all services of the business and receiving/storing contact messages. Contains custom-designed dynamic animations and a photo gallery carousel.",
             link: "https://www.pettingill-industries.com" 
         },
         {
             image: [cssZen, cssZenMain],
             title: "CSS Zen Garden (Recreation)",
-            description: "",
+            sub: "HTML, CSS, and JavaScript",
+            oneLine: "DESIGN CHALLENGE",
+            description: "Recreation of csszengarden.com for the purpose of challenging my design skills.",
             link: "http://nottherealcsszengarden.surge.sh" 
         },
         {
             image: [studio, studioMain],
             title: "Studio Ghibli Films",
-            description: "",
+            sub: "React and JavaScript",
+            oneLine: "CONTENT DISPLAY",
+            description: "Simple film display for Studio Ghibli. Pulls information from third party API.",
             link: "http://nottherealstudiofilms.surge.sh" 
         },
         {
             image: [bounty, bountyMain],
             title: "Star Wars Most Wanted",
-            description: "",
+            sub: "React, Node, and JavaScript",
+            oneLine: "TO-DO LIST",
+            description: "Basic database interaction for Creating, Reading, Updating, and Deleting a list of 'Star Wars' bounties. Simple example of Object Oriented Programming - the building blocks of complex websites.",
             link: "https://not-original-bounty-hunter.herokuapp.com" 
         },
         {
             image: [business, businessMain],
             title: "Business Time",
-            description: "",
+            sub: "HTML, CSS",
+            oneLine: "BUSINESS WEBSITE",
+            description: "Basic website for a non-existent business. Displays irrelevant content in hard coded HTML and CSS.",
             link: "http://nottherealbusinesstime.surge.sh" 
         },
         {
             image: [mario, marioMain],
             title: "Mario Pest Control",
-            description: "",
+            sub: "HTML, CSS, and JavaScript",
+            oneLine: "BILL CALCULATOR",
+            description: "Simple website calculator for getting the result of mario's services. Basic project with HTML and vanilla JavaScript",
             link: "http://nottherealmariopestcontrol.surge.sh" 
         },
     ]

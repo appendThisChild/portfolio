@@ -1,15 +1,17 @@
 import React, { useState } from "react"
 
 import Image from "../images/IMG_5636.jpg"
+import { useProject } from "../context/ProjectProvider.js"
 
 const Header = ({ offset, scrollToSection }) => {
     const [arrow, setArrow] = useState(false)
+    const { viewing } = useProject()
 
     return(
         <header id="home" className="header" style={{ backgroundPositionY: `${(offset[1] / 4) - 25}%`}}>
             <div>
-                <div>
-                    <img src={Image} alt=""/>
+                <div style={{ transform: viewing ? "none" : ""}}>
+                    <img style={{ transform: viewing ? "none" : ""}} src={Image} alt=""/>
                 </div>
             </div>
             <main>

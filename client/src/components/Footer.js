@@ -1,13 +1,15 @@
 import React, { useState } from "react"
 import IconDisplay from "./IconDisplay"
 
+import { useProject } from "../context/ProjectProvider.js"
+
 const Footer = ({ scrollToSection }) => {
     const [icons, setIcons] = useState([
         {letter: "l", state: false, url: "https://www.linkedin.com/in/ryanpettingill"}, 
         {letter: "F", state: false, url: "https://www.facebook.com/ryan.pettingill.12"}, 
         {letter: "™", state: false, url: "https://www.instagram.com/thelateyogi/"} 
     ])
-
+    const { viewing } = useProject()
     const sendOff = location => window.open(location);
     const mappedIcons =icons.map((obj1, i) => <IconDisplay 
         key={i} 
@@ -18,7 +20,7 @@ const Footer = ({ scrollToSection }) => {
     />)
     return(
         <footer className="footer">
-            <div className="backToTop" onClick={() => scrollToSection("home")}>
+            <div className="backToTop" onClick={() => scrollToSection("home")} style={{ position: viewing ? "initial" : ""}}>
                 &#x2963;
             </div>
             <div>

@@ -31,10 +31,12 @@ body::-webkit-scrollbar {
 
 @keyframes fadeInFromUnder {
     from {
+        position: relative;
         top: 100pt;
         opacity: 0;
     }
     to {
+        position: relative;
         top: 0pt;
         opacity: 1;
     }
@@ -76,7 +78,7 @@ body::-webkit-scrollbar {
 @keyframes bounceInCenter {
     from {
         opacity: 0;
-        transform: scale(.25)
+        transform: scale(.5)
     }
     to {
         opacity: 1;
@@ -148,7 +150,6 @@ body::-webkit-scrollbar {
 
     overflow: hidden;
 
-    position: relative;
     animation-name: fadeInFromUnder;
     animation-duration: 1.75s;
     animation-direction: normal;
@@ -161,7 +162,6 @@ body::-webkit-scrollbar {
 .header > main {
     padding: 25pt;
 
-    position: relative;
     animation-name: fadeInFromUnder;
     animation-duration: 1.25s;
     animation-direction: normal;
@@ -185,7 +185,6 @@ body::-webkit-scrollbar {
 }
 .viewDetails {
     cursor: pointer;
-    position: relative;
     transition: all .3s linear 0s;
 
     font-weight: 800;
@@ -430,7 +429,7 @@ body::-webkit-scrollbar {
     /* margin-top: 5vw; */
 
     background-size: cover;
-    background-position: center ;
+    background-position: center;
 }
 
 .projects > div > div {
@@ -449,13 +448,24 @@ body::-webkit-scrollbar {
 
     overflow: hidden;
 }
-.projects > div > div > h1 {
+.projects > div > div > div {
     width: 100%;
-
-    text-align: center;
-    font-size: 28pt;
     padding: 5pt;
-    
+}
+.projects > div > div > div > h1 {
+    text-align: center;
+    font-size: 22pt;
+    letter-spacing: .5pt;
+    font-family: sans-serif;
+    font-weight: 100;
+}
+.projects > div > div > div > h2 {
+    color: #73ff16;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 12pt;
+    line-height: 18pt;
 }
 .projects > div > div > button {
     display: flex;
@@ -468,10 +478,10 @@ body::-webkit-scrollbar {
     height: 30pt;
     width: 110pt;
 
-    font-size: 16pt;
-    font-family: ModernSans;
-    letter-spacing: .25pt;
-    font-weight: 900;
+    font-size: 12pt;
+    font-family: sans-serif;
+    letter-spacing: .5pt;
+    font-weight: 100;
 }  
 
 .slideInFromTop {
@@ -505,6 +515,105 @@ body::-webkit-scrollbar {
 
 
 
+
+
+/*  */
+/*  */
+/* fullProjectDisplay */
+/*  */
+/*  */
+
+
+.fullProjectDisplay {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fullProjectDisplay > main {
+    width: 100%;
+
+    animation-name: bounceInCenter;
+    animation-duration: .5s;
+}
+.fullProjectDisplay > main > header {
+    border-bottom: 3pt solid black;
+    height: 45vh;
+    overflow: hidden;
+
+    background-position: center;
+    background-size: cover;
+}
+/* .fullProjectDisplay > main > header > img {
+
+} */
+.fullProjectDisplay > main > section {
+    height: 55vh;
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+}
+.fullProjectDisplay > main > section > div {
+    padding: 8pt; 
+}
+.fullProjectDisplay > main > section > div > h1 {
+    font-family: sans-serif;
+    font-weight: 500;
+
+    padding-top: 4pt;
+}
+.fullProjectDisplay > main > section > div > h2 {
+    font-family: sans-serif;
+    color: #73ff16;
+    font-weight: 500;
+    font-size: 9pt;
+    letter-spacing: .75pt;
+    line-height: 12pt;
+
+    padding-bottom: 8pt;
+    margin-bottom: 8pt;
+    border-bottom: 1px solid black;
+}
+.fullProjectDisplay > main > section > div > p {
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 11pt;
+    letter-spacing: .25pt;
+
+}
+.fullProjectDisplay > main > section > aside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 8pt;
+    margin-top: auto;
+    margin-bottom: 16pt;
+    
+}
+.fullProjectDisplay > main > section > aside > button {
+    background-color: #73ff16;
+    border: 0pt;
+    padding: 8pt;
+    
+
+    color: white;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 14.5pt;
+    letter-spacing: 1.5pt;
+}
+.fullProjectDisplay > main > section > aside > span {
+    color: rgb(175, 175, 175);
+    font-size: 18pt;
+    font-weight: 100;
+    margin-right: 8pt;
+}
 
 
 
@@ -555,8 +664,8 @@ body::-webkit-scrollbar {
 }
 .formAppear {
     animation-name: bounceInCenter;
-    animation-duration: 1.25s;
-    animation-timing-function: cubic-bezier(.35,1.5,.56,1);
+    animation-duration: .75s;
+    animation-timing-function: cubic-bezier(.35,1.75,.56,1);
 }
 .contactForm > * {
     background-color: rgb(10, 65, 78);
@@ -576,8 +685,8 @@ body::-webkit-scrollbar {
 }
 .contactForm > button {
     cursor: pointer;
-    font-family: ModernSans;
-    font-size: 16pt;
+    font-family: sans-serif;
+    font-size: 14pt;
 
     padding-left: 17pt;
     padding-right: 17pt;
