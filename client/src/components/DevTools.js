@@ -1,5 +1,7 @@
 import React from "react"
 
+import SectionHeaders from './SectionHeaders';
+
 import html from "../images/512px-HTML5_logo_and_wordmark.svg.png"
 import node from "../images/590px-Node.js_logo.svg.png"
 import jQuery from "../images/427165_preview.png"
@@ -15,17 +17,24 @@ import LogoImage from "./LogoImage"
 
 const DevTools = ({ animations }) => {
     const logoArr = [ html, css, javaScript, jQuery, reactImage, node, mongoDB, gitHub, gcp, aws, stripe ]
+    const { aboutSubHeader, techSubheader } = animations
+    
     const mappedLogos = logoArr.map((image, i) => <LogoImage key={i} source={image} selector={`devTools${i + 1}`} isOn={animations}/>)
     return(
         <div className="tech">
-            <div>
-                <h1>Technologies</h1>
-            </div>
-            {/* 
-                make this header like the section headers
-                ...
-                
-            */}
+            <SectionHeaders 
+                title={"Technologies"} 
+                id={"aboutSubHeader"} 
+                isOn={aboutSubHeader} 
+                fontSize={"27pt"}
+                headerClassName={"headerAnimationFromRight"} 
+                underScoreClassName={"underScoreAnimationFromRight"}
+            />
+            <h3
+                id="techSubheader" 
+                className={techSubheader ? "underScoreAnimationFromLeft" : ""} 
+                style={{ opacity: techSubheader ? "1" : "0"}}
+            >List of familiar developer tools.</h3>
             <div>{mappedLogos}</div>
         </div>
     )

@@ -2,6 +2,7 @@ import React from 'react'
 
 import DevTools from './DevTools';
 import SectionHeaders from './SectionHeaders';
+import AboutInfo from './AboutInfo';
 
 const About = ({ animations }) => {
     const { header1 } = animations
@@ -14,6 +15,7 @@ const About = ({ animations }) => {
                 headerClassName={"headerAnimationFromRight"} 
                 underScoreClassName={"underScoreAnimationFromRight"}
             />
+            <AboutInfo animations={animations}/>
             <DevTools animations={animations}/>
         </section>
     )

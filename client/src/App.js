@@ -36,8 +36,8 @@ const App = () => {
         for (let i = 1; i < 4; i++){
             // animationArr.push(`devTools${i}`)
             if (i < 4) animationArr.push(`header${i}`);
-            if (i < 2) animationArr.push("contactSubheader", "projectSubheader");
-            if (i < 2 && !phoneSized) animationArr.push(`project1`, "contactForm", "devTools1");
+            if (i < 2) animationArr.push("contactSubheader", "projectSubheader", "aboutSubHeader", "devTools1", "techSubheader", "aboutInfoFirstLine", "aboutInfoButton");
+            if (i < 2 && !phoneSized) animationArr.push(`project1`, "contactForm");
         }
         let animationObj = {}
         animationArr.forEach((id) => animationObj = {...animationObj, [id]: screenIsOver(elementDetails(id))})
@@ -67,8 +67,8 @@ const App = () => {
         return () => window.removeEventListener('scroll', backgroundScroll);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
-
-    const animations = viewing ? {} : animationActivate
+    
+    const animations = viewing ? Object.keys(animationActivate).reduce((final, sumObj) => ({ ...final, [sumObj] : true }), {}) : animationActivate
     return(
         <div onClick={closeNav}>
             <FullProjectDisplay offset={offset}/>
