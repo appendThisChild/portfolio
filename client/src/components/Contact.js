@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 import SectionHeaders from './SectionHeaders';
 import ContactForm from "./ContactForm.js"
@@ -7,7 +8,9 @@ const Contact = ({ animations, phoneSized }) => {
     const { header3, contactForm, contactSubheader } = animations
 
     const handleSubmit = message => {
-        console.log(message)
+        axios.post("/contactMessage", message)
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err.response.data.errMsg))
     }
     return(
         <section id="contact" className="contact">

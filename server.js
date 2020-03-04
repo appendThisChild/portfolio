@@ -20,7 +20,7 @@ const conn = mongoose.connect(process.env.MONGODB_URI || mongoURI, options)
 conn.then(() => console.log('[o] Connected to the DB'), (err) => console.log(err))
 
 // routes
-
+app.use('/contactMessage', require('./routes/contactMessageRoutes.js'))
 
 
 app.use((err, req, res, next) => {

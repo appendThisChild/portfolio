@@ -1,5 +1,7 @@
 import React from "react"
 
+import Resume from "../documents/Resume 3-4-20.pdf"
+
 const AboutInfo = ({ animations }) => {
     const { aboutInfoFirstLine, aboutInfoButton } = animations
 
@@ -11,15 +13,15 @@ const AboutInfo = ({ animations }) => {
                 <p>My leading ambition is to assist in the continuation of an exceptional truth; that you belong here and all is working in your favor.</p>
             </div>
             <div>
-                <h3>Programming Focuses</h3>
+                <h3>Focuses</h3>
                 <ul>
                     <li>Prioritizing reponsive and dynamic designs.</li>
                     <li>Crafting reusable, simplified, and organized code.</li>
                     <li>Continuously learning new technologies.</li>
                 </ul>
             </div>
-            
-            <button id="aboutInfoButton"><span>&#x2913;</span> Resume</button>
+            <a href={Resume} download="Ryan-Pettingill-Resume.pdf" id="aboutInfoButton"><span>&#x2913;</span> Resume</a>
+            {/* <button  ></button> */}
         </section>
     )
 }
