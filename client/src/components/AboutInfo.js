@@ -1,6 +1,6 @@
 import React from "react"
 
-import Resume from "../documents/Resume 3-4-20.pdf"
+import Resume from "../documents/Revised-Reume3-5-20.pdf"
 
 const AboutInfo = ({ animations }) => {
     const { aboutInfoFirstLine, aboutInfoButton } = animations

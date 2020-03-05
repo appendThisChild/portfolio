@@ -34,7 +34,7 @@ const DevProjects = ({ animations, phoneSized }) => {
             title: "Pettingill Industries",
             sub: "React, Node, and JavaScript",
             oneLine: "ONLINE BUSINESS SOLUTIONS",
-            description: "Responible for displaying all services of the business and receiving/storing contact messages. Contains custom-designed dynamic animations and a photo gallery carousel.",
+            description: "Responsible for displaying all services of the business and receiving/storing contact messages. Contains custom-designed dynamic animations and a photo gallery carousel.",
             link: "https://www.pettingill-industries.com" 
         },
         {
