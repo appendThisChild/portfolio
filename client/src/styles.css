@@ -381,6 +381,9 @@ body::-webkit-scrollbar {
     font-family: sans-serif;
     font-weight: 100;
 }
+.about > section > a:hover {
+    background-color: rgb(255, 96, 96);
+}
 .about > section > a > span {
     font-size: 18pt;
     line-height: 23pt;
@@ -671,7 +674,7 @@ body::-webkit-scrollbar {
 
 .contactBorder {
     border-bottom: 0pt;
-    border-top: 95pt solid #e7e7e7;
+    border-top: 95pt solid#ececec;
     border-left: 50vw solid rgb(16, 101, 124);
     border-right: 50vw solid rgb(16, 101, 124);
 }
