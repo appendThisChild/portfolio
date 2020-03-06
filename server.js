@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 // added line for heroku redirect to https
+const sslRedirect = require('heroku-ssl-redirect')
 require('dotenv').config()
 const morgan = require('morgan')
 const mongoose = require('mongoose')
