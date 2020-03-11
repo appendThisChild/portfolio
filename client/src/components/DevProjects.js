@@ -1,12 +1,12 @@
 import React from 'react'
 
-import blissed from "../images/blissed-out-body-work.png"
+import blissed from "../images/blissed-out-body-work.jpg"
 import pettingill from "../images/pettingill-industries.png"
 import cssZen from "../images/css-zen-garden.png"
-import studio from "../images/studio-films.png"
+import studio from "../images/studio-films.jpg"
 import bounty from "../images/original-bounty.png"
-import business from "../images/business-time.png"
-import mario from "../images/mario-pest.png"
+import business from "../images/business-time.jpg"
+import mario from "../images/mario-pest.jpg"
 
 import blissedMain from "../images/blissed.png"
 import pettingillMain from "../images/pettingill.png"
