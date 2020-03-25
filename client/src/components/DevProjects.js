@@ -23,10 +23,10 @@ const DevProjects = ({ animations, phoneSized }) => {
     const projectsArr = [
         {
             image: [blissed, blissedMain],
-            title: "Blissed Out Body Work",
+            title: "Blissed Out Body Work (Offline)",
             sub: "React, Node, and JavaScript",
             oneLine: "APPOINTMENT BOOKING WEBSITE",
-            description: "Streamlines the process of setting appointments for customers and creates a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details. Payment processing via Stripe and calendar invites via GCP.",
+            description: "This application is currently offline due lack of use. You are welcome to take a look at the code if that interests you. (github.com/appendThisChild/booking-website) - Streamlines the process of setting appointments for customers and creates a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details. Payment processing via Stripe and calendar invites via GCP.",
             link: "https://www.blissedoutbodywork.com" 
         },
         {
@@ -35,7 +35,7 @@ const DevProjects = ({ animations, phoneSized }) => {
             sub: "React, Node, and JavaScript",
             oneLine: "ONLINE BUSINESS SOLUTIONS",
             description: "Responsible for displaying all services of the business and receiving/storing contact messages. Contains custom-designed dynamic animations and a photo gallery carousel.",
-            link: "https://www.pettingill-industries.com" 
+            link: "https://www.pettingill-industries.herokuapp.com" 
         },
         {
             image: [cssZen, cssZenMain],
