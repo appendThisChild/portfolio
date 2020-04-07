@@ -27,7 +27,7 @@ const DevProjects = ({ animations, phoneSized }) => {
             sub: "React, Node, and JavaScript",
             oneLine: "APPOINTMENT BOOKING WEBSITE",
             description: "This application is a demo. - Streamlines the process of setting appointments for customers and creates a detailed financial record. The website makes it easy to add new employees, customize each employee's preferences, and adjust website details. Payment processing via Stripe and calendar invites via GCP.",
-            link: "therapist-booking.herokuapp.com/" 
+            link: "https://therapist-booking.herokuapp.com/" 
         },
         {
             image: [pettingill, pettingillMain],
@@ -35,7 +35,7 @@ const DevProjects = ({ animations, phoneSized }) => {
             sub: "React, Node, and JavaScript",
             oneLine: "ONLINE BUSINESS SOLUTIONS",
             description: "Responsible for displaying all services of the business and receiving/storing contact messages. Contains custom-designed dynamic animations and a photo gallery carousel.",
-            link: "pettingill-industries.herokuapp.com" 
+            link: "https://pettingill-industries.herokuapp.com" 
         },
         {
             image: [cssZen, cssZenMain],
